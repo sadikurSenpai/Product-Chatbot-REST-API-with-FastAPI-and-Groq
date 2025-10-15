@@ -23,25 +23,30 @@ It intelligently interacts with customers — answering questions about product 
 fastapi_chatbot/
 │
 ├── app/
-│   ├── main.py                 # FastAPI app instantiation & routing
-│   ├── config.py               # Environment variables & API configuration
+│   ├── __init__.py
+│   ├── main.py                 # FastAPI app instantiation, routing
+│   ├── config.py               # API keys, environment variables
 │   │
-│   ├── models/                 # Pydantic models for validation
-│   │    ├── product.py         # Product schema
-│   │    └── chat.py            # Chat request/response schema
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── product.py          # Pydantic model for product
+│   │   └── chat.py             # Pydantic model for chat requests/responses
 │   │
-│   ├── services/               # Business logic layer
-│   │    ├── product_service.py # Fetch products from DummyJSON
-│   │    ├── nlp_service.py     # Intent understanding using Groq LLM
-│   │    └── response_service.py# Generate final responses
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── product_service.py  # Fetch products from DummyJSON
+│   │   ├── nlp_service.py      # Groq model integration, intent understanding
+│   │   └── response_service.py # Build human-like responses
 │   │
-│   ├── routers/                # API routes
-│   │    ├── products.py        # /api/products
-│   │    └── chat.py            # /api/chat
-│   │
+│   ├── routers/
+│       ├── __init__.py
+│       ├── products.py         # /api/products endpoints
+│       └── chat.py             # /api/chat endpoint
+│
 ├── requirements.txt
-├── .env                        # Environment configuration
-└── README.md                   # Project documentation
+├── .env                        # API keys, config
+└── README.md
+
 ```
 
 ---
